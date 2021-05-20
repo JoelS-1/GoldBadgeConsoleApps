@@ -17,6 +17,10 @@ This is a console app for storing and managing information for insurance claims.
 This is a console app for storing and managing information for a door badge system. Badge IDs hold door information that displays the doors each badge has access to.
 * Startup will need to be set as "BadgesApp".
 
+## Komodo Outings
+
+Currently this application is still a work in progress. Check back soon!
+
 ## Technologies Used
 
 * Visual Studio 2019
