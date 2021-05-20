@@ -10,25 +10,25 @@ namespace OutingsClassLibrary
     {
         public enum EventType { Golf, Bowling, AmusmentPark, Concert}
 
+        public int OutingId { get; set; }
         public EventType TypeOfEvent { get; set; }
         public int PeopleAtEvent { get; set; }
         public DateTime Date { get; set; }
-        public double TotalCostPerPerson { get; set; }
-        public double OverallTotalCost
+        public double OverallTotalCost { get; set; }
+        public double TotalCostPerPerson
         {
             get
             {
-                return TotalCostPerPerson * PeopleAtEvent;
+                return OverallTotalCost / PeopleAtEvent;
             }
         }
 
-        public Outing(EventType typeOfEvent, int peopleAtEvent, DateTime date, double totalCostPerPerson)
+        public Outing(int outingId, EventType typeOfEvent, int peopleAtEvent, DateTime date, double overallTotalCost)
         {
             TypeOfEvent = typeOfEvent;
             PeopleAtEvent = peopleAtEvent;
             Date = date;
-            TotalCostPerPerson = totalCostPerPerson;
+            OverallTotalCost = overallTotalCost;
         }
-
     }
 }

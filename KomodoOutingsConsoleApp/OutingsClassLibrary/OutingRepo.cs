@@ -20,11 +20,50 @@ namespace OutingsClassLibrary
             return wasAdded;
         }
 
-        public bool UpdateOuting()
+        public Outing GetOutingByIdentifier(int outingId)
+        {
+            foreach(Outing outing in _outingRepo)
+            {
+                if(outing.OutingId == outingId)
+                {
+                    return outing;
+                }
+            }
+            return null;
+        }
+
+        public bool UpdateOuting(int outingId, Outing updatedOuting)
+        {
+            Outing outingToUpdate = GetOutingByIdentifier(outingId);
+            if(outingToUpdate != null)
+            {
+                outingToUpdate.OutingId = updatedOuting.OutingId;
+                outingToUpdate.TypeOfEvent = updatedOuting.TypeOfEvent;
+                outingToUpdate.PeopleAtEvent = updatedOuting.PeopleAtEvent;
+                outingToUpdate.Date = updatedOuting.Date;
+                outingToUpdate.OverallTotalCost = updatedOuting.OverallTotalCost;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public List<Outing> GetAllOutings()
         {
             return _outingRepo;
+        }
+
+        public bool DeleteOutings(int outingId)
+        {
+            int startingCount = _outingRepo.Count;
+
+            Outing outingToDelete = GetOutingByIdentifier(outingId);
+            _outingRepo.Remove(outingToDelete);
+
+            bool wasRemoved = (_outingRepo.Count < startingCount);
+            return wasRemoved;
         }
 
         public double CostOfAllOutings()
