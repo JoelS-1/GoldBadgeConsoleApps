@@ -220,8 +220,8 @@ namespace ClaimsApp
             {
                 Console.WriteLine("\nWhat is the claim amount for the new claim?");
 
-                int claimAmountInput;
-                bool isInt = Int32.TryParse(Console.ReadLine(), out claimAmountInput);
+                double claimAmountInput;
+                bool isInt = double.TryParse(Console.ReadLine(), out claimAmountInput);
 
                 if (isInt)
                 {
