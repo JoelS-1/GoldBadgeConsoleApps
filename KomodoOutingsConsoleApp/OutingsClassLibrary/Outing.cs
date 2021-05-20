@@ -23,6 +23,8 @@ namespace OutingsClassLibrary
             }
         }
 
+        public Outing() { }
+
         public Outing(int outingId, EventType typeOfEvent, int peopleAtEvent, DateTime date, double overallTotalCost)
         {
             TypeOfEvent = typeOfEvent;
