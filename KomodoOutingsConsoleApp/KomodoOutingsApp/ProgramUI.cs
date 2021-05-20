@@ -141,20 +141,20 @@ namespace KomodoOutingsApp
 
             }
 
-            Console.WriteLine("How many people attended the event?");
+            Console.WriteLine("How many people attended the event?\n");
             newOuting.PeopleAtEvent = Convert.ToInt32(Console.ReadLine());
 
 
-            Console.WriteLine("What date did this event occur on? Please enter in the following format: 'yyyy, dd, mm'");
+            Console.WriteLine("What date did this event occur on? Please enter in the following format: 'yyyy, mm, dd'\n");
             newOuting.Date = Convert.ToDateTime(Console.ReadLine());
 
-            Console.WriteLine("What was the overall cost of the event?");
-            newOuting.OverallTotalCost = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What was the overall cost of the event?\n");
+            newOuting.OverallTotalCost = Convert.ToDouble(Console.ReadLine());
 
             bool wasAddedSuccessfully = _repo.AddOuting(newOuting);
             if (wasAddedSuccessfully)
             {
-                Console.WriteLine("The outing was added successfully");
+                Console.WriteLine("The outing was added successfully\n");
             }
             else
             {
