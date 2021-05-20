@@ -19,7 +19,7 @@ This is a console app for storing and managing information for a door badge syst
 
 ## Komodo Outings
 
-Currently this application is still a work in progress. Check back soon! (currently update and delete methods of CRUD not yet running).
+This is a rough MVP. Currently this application is still a work in progress. Check back soon! (currently update and delete methods of CRUD not yet running. Work in progress code is commented out).
 This will be a console app for storing and managing information about a companies outings. It will help to calculate total costs of all company outings and events, in total and per event type.
 
 * Startup will need to be set as "KomodoOutingsApp"
